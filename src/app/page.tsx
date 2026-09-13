@@ -1,4 +1,16 @@
-import Image from "next/image";
+"use client";
+
+import React from "react";
+import { User, Terminal } from "lucide-react";
+import Sidebar from "@/components/Sidebar";
+import HeroSection from "@/components/HeroSection";
+import TechStack from "@/components/TechStack";
+import Projects from "@/components/Projects";
+import Experience from "@/components/Experience";
+import Certifications from "@/components/Certifications";
+import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
+import ParticleCanvas from "@/components/ParticleCanvas";
 
 export default function Home() {
   return (
