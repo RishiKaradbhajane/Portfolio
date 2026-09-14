@@ -27,7 +27,7 @@ const CONTACT_LINKS = [
     icon: Mail,
     color: "#f78166",
     copyable: true,
-    description: "Best way to reach me — I respond within 24 hours.",
+    description: "Best way to reach me — I respond within 12 hours.",
   },
   {
     id: "github",
@@ -54,7 +54,7 @@ const CONTACT_LINKS = [
 const TERMINAL_CONTACT = [
   { cmd: "send --to rushikesh", out: "Connection established ✓" },
   { cmd: "status --availability", out: "Available for opportunities" },
-  { cmd: "echo $RESPONSE_TIME", out: "< 24 hours" },
+  { cmd: "echo $RESPONSE_TIME", out: "< 12 hours" },
 ];
 
 export default function ContactSection() {
@@ -247,11 +247,10 @@ export default function ContactSection() {
               <button
                 type="submit"
                 id="contact-send-btn"
-                className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 ${
-                  sent
-                    ? "bg-[#3fb950]/20 text-[#3fb950] border border-[#3fb950]/40"
-                    : "bg-[#58a6ff] hover:bg-[#79b8ff] text-[#0d1117]"
-                }`}
+                className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 ${sent
+                  ? "bg-[#3fb950]/20 text-[#3fb950] border border-[#3fb950]/40"
+                  : "bg-[#58a6ff] hover:bg-[#79b8ff] text-[#0d1117]"
+                  }`}
               >
                 {sent ? (
                   <>
