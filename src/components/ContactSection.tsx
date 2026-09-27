@@ -54,7 +54,7 @@ const CONTACT_LINKS = [
 const TERMINAL_CONTACT = [
   { cmd: "send --to rushikesh", out: "Connection established ✓" },
   { cmd: "status --availability", out: "Available for opportunities" },
-  { cmd: "echo $RESPONSE_TIME", out: "< 12 hours" },
+  { cmd: "echo $RESPONSE_TIME", out: "< 10 hours" },
 ];
 
 export default function ContactSection() {
