@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import { motion } from "framer-motion";
-import { Mail, Copy, Check, Terminal, Send, MessageSquare } from "lucide-react";
+import { Mail, Copy, Check, Terminal, Send, MessageSquare, Loader2, AlertCircle } from "lucide-react";
 
 const GithubIcon = (props: React.SVGProps<SVGSVGElement>) => (
   <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" {...props}>
@@ -60,7 +60,8 @@ const TERMINAL_CONTACT = [
 export default function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null);
   const [formState, setFormState] = useState({ name: "", email: "", message: "" });
-  const [sent, setSent] = useState(false);
+  const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [errorMsg, setErrorMsg] = useState("");
 
   const copyToClipboard = (text: string, id: string) => {
     navigator.clipboard.writeText(text).then(() => {
@@ -69,16 +70,32 @@ export default function ContactSection() {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Open mailto with form content
-    const subject = encodeURIComponent(`Portfolio Contact from ${formState.name}`);
-    const body = encodeURIComponent(
-      `Name: ${formState.name}\nEmail: ${formState.email}\n\nMessage:\n${formState.message}`
-    );
-    window.open(`mailto:rushikeshrkaradbhajane@gmail.com?subject=${subject}&body=${body}`);
-    setSent(true);
-    setTimeout(() => setSent(false), 3000);
+    setStatus("sending");
+    setErrorMsg("");
+
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(formState),
+      });
+
+      const data = await res.json();
+
+      if (res.ok && data.success) {
+        setStatus("sent");
+        setFormState({ name: "", email: "", message: "" });
+        setTimeout(() => setStatus("idle"), 4000);
+      } else {
+        setStatus("error");
+        setErrorMsg(data.error || "Failed to send message. Please try again.");
+      }
+    } catch {
+      setStatus("error");
+      setErrorMsg("Network error. Please check your connection and try again.");
+    }
   };
 
   return (
@@ -247,15 +264,28 @@ export default function ContactSection() {
               <button
                 type="submit"
                 id="contact-send-btn"
-                className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 ${sent
+                disabled={status === "sending"}
+                className={`w-full flex items-center justify-center gap-2 py-2.5 rounded-md text-sm font-semibold transition-all duration-200 disabled:opacity-70 disabled:cursor-not-allowed ${status === "sent"
                   ? "bg-[#3fb950]/20 text-[#3fb950] border border-[#3fb950]/40"
-                  : "bg-[#58a6ff] hover:bg-[#79b8ff] text-[#0d1117]"
+                  : status === "error"
+                    ? "bg-[#f85149]/20 text-[#f85149] border border-[#f85149]/40"
+                    : "bg-[#58a6ff] hover:bg-[#79b8ff] text-[#0d1117]"
                   }`}
               >
-                {sent ? (
+                {status === "sending" ? (
+                  <>
+                    <Loader2 className="w-4 h-4 animate-spin" />
+                    Sending...
+                  </>
+                ) : status === "sent" ? (
                   <>
                     <Check className="w-4 h-4" />
-                    Message Queued!
+                    Message Sent!
+                  </>
+                ) : status === "error" ? (
+                  <>
+                    <AlertCircle className="w-4 h-4" />
+                    Failed to Send
                   </>
                 ) : (
                   <>
@@ -264,9 +294,16 @@ export default function ContactSection() {
                   </>
                 )}
               </button>
-              <p className="text-[#6e7681] text-[10px] text-center font-mono">
-                Opens your email client with the message pre-filled
-              </p>
+              {status === "error" && errorMsg && (
+                <p className="text-[#f85149] text-[11px] text-center font-mono">
+                  {errorMsg}
+                </p>
+              )}
+              {status !== "error" && (
+                <p className="text-[#6e7681] text-[10px] text-center font-mono">
+                  Your message will be delivered directly to my inbox
+                </p>
+              )}
             </form>
           </motion.div>
         </div>
