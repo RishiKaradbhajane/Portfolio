@@ -14,8 +14,8 @@ const TECH_CATEGORIES = [
       { name: "Apache Airflow", highlight: true },
       { name: "Apache Kafka", highlight: true },
       { name: "Databricks", highlight: true },
-      { name: "ETL / ELT Pipelines", highlight: false },
-      { name: "Batch & Streaming Data", highlight: false },
+      { name: "ETL / ELT Pipelines", highlight: true },
+      { name: "Batch & Streaming Data", highlight: true },
     ],
   },
   {
@@ -24,7 +24,8 @@ const TECH_CATEGORIES = [
     color: "#d2a8ff",
     skills: [
       { name: "Machine Learning", highlight: true },
-      { name: "Natural Language Processing", highlight: true },
+      { name: "Agentic AI", highlight: true },
+      { name: "LLM & LangChain", highlight: true },
       { name: "Deep Learning", highlight: true },
       { name: "RAG Systems", highlight: true },
       { name: "Data Science", highlight: true },
@@ -36,6 +37,9 @@ const TECH_CATEGORIES = [
     color: "#3fb950",
     skills: [
       { name: "SQL / MySQL", highlight: true },
+      { name: "Vector databases", highlight: true },
+      { name: "ChromaDB", highlight: true },
+      { name: "FAISS", highlight: true },
       { name: "MongoDB", highlight: true },
       { name: "AWS S3", highlight: true },
       { name: "Data Modeling", highlight: true },
@@ -49,23 +53,9 @@ const TECH_CATEGORIES = [
       { name: "Python", highlight: true },
       { name: "Java", highlight: true },
       { name: "UNIX Shell Scripting", highlight: true },
-      { name: "OOPs & Design", highlight: false },
-      { name: "DBMS Concepts", highlight: false },
-      { name: "Data Structures", highlight: false },
-    ],
-  },
-  {
-    category: "Cloud, BI & Enterprise Tools",
-    icon: Cloud,
-    color: "#79c0ff",
-    skills: [
-      { name: "AWS", highlight: true },
-      { name: "Microsoft Graph API", highlight: true },
-      { name: "Power BI (DAX, Power Query)", highlight: true },
-      { name: "AutoSys", highlight: true },
-      { name: "SailPoint / IAM Platforms", highlight: false },
-      { name: "Docker", highlight: false },
-      { name: "Linux Administration", highlight: false },
+      { name: "OOPs & Design", highlight: true },
+      { name: "DBMS Concepts", highlight: true },
+      { name: "Data Structures", highlight: true },
     ],
   },
   {
@@ -75,9 +65,21 @@ const TECH_CATEGORIES = [
     skills: [
       { name: "Git", highlight: true },
       { name: "GitHub", highlight: true },
-      { name: "Agile / Scrum Sprints", highlight: true },
-      { name: "CI / CD Pipelines", highlight: false },
-      { name: "Sprint Planning & Reviews", highlight: false }
+      { name: "Agile/ scrum Sprint", highlight: true },
+      { name: "CI / CD Pipelines", highlight: true },
+      { name: "Docker", highlight: true },
+      { name: "Kubernetes", highlight: true }
+    ],
+  },
+  {
+    category: "Cloud, BI & Enterprise Tools",
+    icon: Cloud,
+    color: "#79c0ff",
+    skills: [
+      { name: "AWS", highlight: true },
+      { name: "Microsoft Graph API", highlight: true },
+      { name: "AutoSys", highlight: true },
+      { name: "SailPoint / IAM Platforms", highlight: false }
     ],
   },
 ];
@@ -102,7 +104,7 @@ const CORE_SKILL_TAGS = [
 
 export default function TechStack() {
   return (
-    <section id="tech" className="py-20 lg:py-28 relative border-t border-white/5">
+    <section id="tech" className="py-16 lg:py-20 relative border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -111,7 +113,7 @@ export default function TechStack() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-8"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#3fb950] font-mono text-xs"># tech-stack.sh</span>
@@ -129,16 +131,6 @@ export default function TechStack() {
           transition={{ duration: 0.6, delay: 0.1 }}
           className="flex flex-wrap gap-2.5 mb-12"
         >
-          {CORE_SKILL_TAGS.map(({ label, dot }) => (
-            <span
-              key={label}
-              className="tech-badge cursor-default hover:scale-105 transition-transform"
-              style={{ borderColor: `${dot}35`, color: "#e6edf3" }}
-            >
-              <span className="w-2 h-2 rounded-full" style={{ background: dot }} />
-              {label}
-            </span>
-          ))}
         </motion.div>
 
         {/* Skill categories grid */}

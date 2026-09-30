@@ -28,14 +28,17 @@ const TIMELINE: TimelineItem[] = [
     location: "Bangalore, Karnataka, India",
     period: "July 2025 – Present",
     current: true,
-    summary: "Working on enterprise-scale Identity & Access Management (IAM) data consolidation and analytics processing.",
+    summary: "Engineered enterprise-scale IAM data pipelines and automation solutions using PySpark, Databricks, Airflow, AWS S3 and Microsoft Graph API",
     description: [
-      "I work on an enterprise IAM data platform for State Street where we consolidate account and identity data from heterogeneous legacy and directory platforms.",
-      "AutoSys handles upstream scheduling and file transfers, S3 provides the landing/archive layer, Airflow orchestrates processing, and Databricks performs the transformation and analytical processing.",
-      "I work mainly on SQL/PySpark transformations, data quality, business-rule implementation, environment handling and pipeline troubleshooting.",
-      "The resulting datasets support Power BI-based compliance reporting through PCP and identity/ownership processing through Bionics and SailPoint.",
+      "Built daily data pipelines processing 500+ GB and 50+ files/day using PySpark, Airflow, AutoSys, AWS S3 and Databricks.",
+      "Processed 100K+ IAM accounts across 8+ enterprise platforms, supporting identity governance and compliance analytics.",
+      "Optimized Spark workloads using partitioning, caching, broadcast joins and AQE, reducing execution time by ~30%.",
+      "Developed Microsoft Graph API–based automation using Entra ID authentication to extract data from SharePoint and automate targeted email distribution.",
+      "Automated 6+ IAM compliance metrics/workflows, reducing manual data-processing activities across recurring operations.",
+      "Implemented Bronze–Silver–Gold architecture, data quality checks and Unity Catalog governance for scalable and controlled data processing.",
+      "Managed error handling, retries, monitoring and production troubleshooting across Airflow and AutoSys workflows."
     ],
-    tags: ["PySpark", "Databricks", "Apache Airflow", "AWS S3", "SQL", "AutoSys", "SailPoint", "Power BI", "IAM Compliance"],
+    tags: ["Python", "PySpark", "PL/SQL", "Databricks", "Apache Airflow", "AWS S3", "SQL", "AutoSys", "Microsoft Graph API", "IAM Compliance"],
   },
   {
     type: "work",
@@ -79,7 +82,7 @@ export default function Experience() {
   });
 
   return (
-    <section id="experience" className="py-20 lg:py-28 relative border-t border-white/5">
+    <section id="experience" className="py-16 lg:py-20 relative border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -88,7 +91,7 @@ export default function Experience() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#3fb950] font-mono text-xs">$ cat journey.log</span>

@@ -59,7 +59,7 @@ const TERMINAL_CONTACT = [
 
 export default function ContactSection() {
   const [copied, setCopied] = useState<string | null>(null);
-  const [formState, setFormState] = useState({ name: "", email: "", message: "" });
+  const [formState, setFormState] = useState({ name: "", email: "", subject: "", message: "" });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [errorMsg, setErrorMsg] = useState("");
 
@@ -86,7 +86,7 @@ export default function ContactSection() {
 
       if (res.ok && data.success) {
         setStatus("sent");
-        setFormState({ name: "", email: "", message: "" });
+        setFormState({ name: "", email: "", subject: "", message: "" });
         setTimeout(() => setStatus("idle"), 4000);
       } else {
         setStatus("error");
@@ -99,7 +99,7 @@ export default function ContactSection() {
   };
 
   return (
-    <section id="contact" className="py-20 lg:py-28 relative border-t border-white/5">
+    <section id="contact" className="py-16 lg:py-20 relative border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -108,7 +108,7 @@ export default function ContactSection() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-12"
+          className="mb-8"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#3fb950] font-mono text-xs">$ ping rushikesh --message</span>
@@ -246,6 +246,19 @@ export default function ContactSection() {
                   onChange={(e) => setFormState((p) => ({ ...p, email: e.target.value }))}
                   className="w-full bg-[#0d1117] border border-white/10 rounded-md px-3 py-2 text-[#e6edf3] text-sm font-mono focus:outline-none focus:border-[#58a6ff]/40 transition-colors placeholder-[#6e7681]"
                   placeholder="your@email.com"
+                />
+              </div>
+              <div>
+                <label className="block text-[10px] font-mono text-[#6e7681] mb-1.5">
+                  <span className="text-[#3fb950]">$</span> SUBJECT=
+                </label>
+                <input
+                  type="text"
+                  required
+                  value={formState.subject}
+                  onChange={(e) => setFormState((p) => ({ ...p, subject: e.target.value }))}
+                  className="w-full bg-[#0d1117] border border-white/10 rounded-md px-3 py-2 text-[#e6edf3] text-sm font-mono focus:outline-none focus:border-[#58a6ff]/40 transition-colors placeholder-[#6e7681]"
+                  placeholder="Subject of your message"
                 />
               </div>
               <div>

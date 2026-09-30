@@ -31,7 +31,7 @@ export default function Home() {
         <HeroSection />
 
         {/* About Section */}
-        <section id="about" className="py-20 lg:py-28 relative border-t border-white/5">
+        <section id="about" className="py-16 lg:py-20 relative border-t border-white/5">
           <div className="container mx-auto px-6 lg:px-12 relative z-10 w-full">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
 
@@ -103,34 +103,34 @@ export default function Home() {
                       </div>
                       <div>
                         specialization: [
-                        <span className="text-[#f78166]">"PySpark"</span>,{" "}
-                        <span className="text-[#f78166]">"Airflow"</span>,{" "}
-                        <span className="text-[#f78166]">"Kafka"</span>,{" "}
-                        <span className="text-[#f78166]">"Databricks"</span>,{" "}
+                        <span className="text-[#f78166]">"Data Engineering"</span>,{" "}
+                        <span className="text-[#f78166]">"AI/ML"</span>,{" "}
+                        <span className="text-[#f78166]">"RAG"</span>,{" "}
+                        <span className="text-[#f78166]">"Agentic AI"</span>,{" "}
                         <span className="text-[#f78166]">"AWS"</span>
                         ],
                       </div>
                       <div>
-                        passion: <span className="text-[#f78166]">"Building scalable ETL pipelines &amp; real-time data systems"</span>
+                        passion: <span className="text-[#f78166]">"Building scalable data pipelines & intelligent AI systems"</span>
                       </div>
                     </div>
                     <p>&#125;;</p>
 
                     <div className="font-sans text-sm text-[#c9d1d9] leading-relaxed pt-3 space-y-3 border-t border-white/5">
                       <p>
-                        I am a Data Engineer passionate about building scalable ETL pipelines and real-time data processing systems that drive reliable analytics and business insights 📊.
+                        AI & Data Engineer passionate about building scalable data systems and intelligent AI solutions. 🚀
                       </p>
                       <p>
-                        Currently working as a <strong className="text-[#e6edf3]">System Engineer at Infosys</strong>, I specialize in <strong className="text-[#58a6ff]">PySpark ⚡</strong>, <strong className="text-[#58a6ff]">Airflow 🔄</strong>, <strong className="text-[#58a6ff]">Kafka 🚀</strong>, <strong className="text-[#58a6ff]">Databricks 🧱</strong>, and <strong className="text-[#58a6ff]">AWS ☁️</strong>, developing end-to-end data pipelines for both batch and streaming data.
+                        I specialize in PySpark ⚡, Airflow 🔄, Databricks 🧱, AWS ☁️, SQL 🗄️, Machine Learning 🤖, Generative AI ✨, RAG 🔎, Vector Databases 🧠, and Agentic AI 🕸️, building end-to-end data and AI solutions.
                       </p>
                       <p>
-                        I have worked on real-time analytics and enterprise IAM compliance &amp; data migration projects, focusing on data transformation, workflow automation, and performance optimization.
+                        Experienced in real-time data processing 📡, data migration 🔁, IAM analytics 🔐, workflow automation ⚙️, and performance optimization 📈.
                       </p>
                     </div>
 
                     {/* Driven callout */}
                     <p className="text-xs font-mono text-[#e3b341] pt-2">
-                      🌟 Driven by building efficient data systems, solving real-world data challenges, and continuously improving data workflows.
+                      🌟 Driven by solving real-world problems and building reliable, scalable, and intelligent systems that turn data into meaningful impact. 📊💡
                     </p>
                   </div>
                 </div>
@@ -140,36 +140,36 @@ export default function Home() {
                   <div className="p-4 rounded-xl bg-[#161b22]/50 border border-white/5 flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#58a6ff] mt-2 flex-shrink-0 animate-pulse" />
                     <div>
-                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Enterprise IAM &amp; Data Migration</h4>
+                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Data Engineering</h4>
                       <p className="text-xs text-[#8b949e] leading-normal">
-                        Consolidating account and identity data from heterogeneous legacy platforms with strict compliance standards.
+                        Scalable batch & streaming pipelines with PySpark, Databricks, Airflow, Kafka & SQL
                       </p>
                     </div>
                   </div>
                   <div className="p-4 rounded-xl bg-[#161b22]/50 border border-white/5 flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#3fb950] mt-2 flex-shrink-0 animate-pulse" />
                     <div>
-                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Batch &amp; Streaming ETL</h4>
+                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Enterprise & IAM Automation</h4>
                       <p className="text-xs text-[#8b949e] leading-normal">
-                        Engineering scalable data pipelines with PySpark on Databricks, Apache Airflow, and Apache Kafka.
+                        Automating data ingestion, migration and workflows with Python, AutoSys, Airflow & AWS.
                       </p>
                     </div>
                   </div>
                   <div className="p-4 rounded-xl bg-[#161b22]/50 border border-white/5 flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#d2a8ff] mt-2 flex-shrink-0 animate-pulse" />
                     <div>
-                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Workflow Automation</h4>
+                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">AI & Gen AI</h4>
                       <p className="text-xs text-[#8b949e] leading-normal">
-                        Automating upstream/downstream file transfers with AutoSys, Airflow DAGs, and UNIX Shell scripting.
+                        Building intelligent solutions with ML, GenAI, RAG, vector databases & Agentic AI.
                       </p>
                     </div>
                   </div>
                   <div className="p-4 rounded-xl bg-[#161b22]/50 border border-white/5 flex items-start gap-3">
                     <span className="w-1.5 h-1.5 rounded-full bg-[#f78166] mt-2 flex-shrink-0 animate-pulse" />
                     <div>
-                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Business Intelligence &amp; Analytics</h4>
+                      <h4 className="text-sm font-semibold text-[#e6edf3] mb-1 font-mono">Cloud & Data Platform</h4>
                       <p className="text-xs text-[#8b949e] leading-normal">
-                        Developing Power BI dashboards with DAX and Power Query for regulatory compliance and business metrics.
+                        Designing scalable data solutions using AWS, Databricks & modern lakehouse architectures.
                       </p>
                     </div>
                   </div>

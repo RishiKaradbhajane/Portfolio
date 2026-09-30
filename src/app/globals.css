@@ -33,42 +33,113 @@
   --animate-scanline: scanline 8s linear infinite;
 
   @keyframes float {
-    0%, 100% { transform: translateY(0px); }
-    50% { transform: translateY(-10px); }
+
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+
+    50% {
+      transform: translateY(-10px);
+    }
   }
+
   @keyframes pulse-slow {
-    0%, 100% { opacity: 0.4; }
-    50% { opacity: 0.8; }
+
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+
+    50% {
+      opacity: 0.8;
+    }
   }
+
   @keyframes blink {
-    0%, 100% { opacity: 1; }
-    50% { opacity: 0; }
+
+    0%,
+    100% {
+      opacity: 1;
+    }
+
+    50% {
+      opacity: 0;
+    }
   }
+
   @keyframes slide-up {
-    from { transform: translateY(20px); opacity: 0; }
-    to { transform: translateY(0); opacity: 1; }
+    from {
+      transform: translateY(20px);
+      opacity: 0;
+    }
+
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
   }
+
   @keyframes fade-in {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
   }
+
   @keyframes glow-pulse {
-    0%, 100% { box-shadow: 0 0 5px rgba(88,166,255,0.2), 0 0 20px rgba(88,166,255,0.05); }
-    50% { box-shadow: 0 0 20px rgba(88,166,255,0.4), 0 0 60px rgba(88,166,255,0.15); }
+
+    0%,
+    100% {
+      box-shadow: 0 0 5px rgba(88, 166, 255, 0.2), 0 0 20px rgba(88, 166, 255, 0.05);
+    }
+
+    50% {
+      box-shadow: 0 0 20px rgba(88, 166, 255, 0.4), 0 0 60px rgba(88, 166, 255, 0.15);
+    }
   }
+
   @keyframes scanline {
-    0% { transform: translateY(-100%); }
-    100% { transform: translateY(100vh); }
+    0% {
+      transform: translateY(-100%);
+    }
+
+    100% {
+      transform: translateY(100vh);
+    }
   }
+
   @keyframes terminal-type {
-    from { width: 0; }
-    to { width: 100%; }
+    from {
+      width: 0;
+    }
+
+    to {
+      width: 100%;
+    }
   }
+
   @keyframes particle-drift {
-    0% { transform: translateY(0) translateX(0) scale(1); opacity: 0; }
-    10% { opacity: 1; }
-    90% { opacity: 0.5; }
-    100% { transform: translateY(-100vh) translateX(50px) scale(0.5); opacity: 0; }
+    0% {
+      transform: translateY(0) translateX(0) scale(1);
+      opacity: 0;
+    }
+
+    10% {
+      opacity: 1;
+    }
+
+    90% {
+      opacity: 0.5;
+    }
+
+    100% {
+      transform: translateY(-100vh) translateX(50px) scale(0.5);
+      opacity: 0;
+    }
   }
 }
 
@@ -119,18 +190,36 @@ body {
 }
 
 /* ─── Monospace font for code elements ─── */
-code, pre, .font-mono {
+code,
+pre,
+.font-mono {
   font-family: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
 }
 
 /* ─── Custom Scrollbar ─── */
-::-webkit-scrollbar { width: 5px; height: 5px; }
-::-webkit-scrollbar-track { background: #0d1117; }
-::-webkit-scrollbar-thumb { background: #30363d; border-radius: 3px; }
-::-webkit-scrollbar-thumb:hover { background: #58a6ff; }
+::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0d1117;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #30363d;
+  border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #58a6ff;
+}
 
 /* ─── Selection ─── */
-::selection { background: rgba(88, 166, 255, 0.3); color: #e6edf3; }
+::selection {
+  background: rgba(88, 166, 255, 0.3);
+  color: #e6edf3;
+}
 
 /* ─── Terminal Card Style ─── */
 .terminal-card {
@@ -163,9 +252,17 @@ code, pre, .font-mono {
   border-radius: 50%;
 }
 
-.terminal-dot-red { background: #ff5f57; }
-.terminal-dot-yellow { background: #febc2e; }
-.terminal-dot-green { background: #28c840; }
+.terminal-dot-red {
+  background: #ff5f57;
+}
+
+.terminal-dot-yellow {
+  background: #febc2e;
+}
+
+.terminal-dot-green {
+  background: #28c840;
+}
 
 /* ─── Typing cursor ─── */
 .typing-cursor::after {
@@ -193,12 +290,10 @@ code, pre, .font-mono {
 .section-separator {
   border: none;
   height: 1px;
-  background: linear-gradient(
-    90deg,
-    transparent,
-    rgba(88, 166, 255, 0.15),
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(88, 166, 255, 0.15),
+      transparent);
 }
 
 /* ─── Glow accent ─── */
@@ -219,7 +314,10 @@ code, pre, .font-mono {
   border-radius: 2px;
   transition: transform 0.15s ease;
 }
-.contrib-cell:hover { transform: scale(1.3); }
+
+.contrib-cell:hover {
+  transform: scale(1.3);
+}
 
 /* ─── Noise texture overlay ─── */
 .noise-overlay {
@@ -244,6 +342,7 @@ code, pre, .font-mono {
 .tooltip {
   position: relative;
 }
+
 .tooltip:hover::after {
   content: attr(data-tip);
   position: absolute;
