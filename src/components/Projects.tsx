@@ -72,7 +72,7 @@ export default function Projects() {
   });
 
   return (
-    <section id="projects" className="py-20 lg:py-28 relative border-t border-white/5">
+    <section id="projects" className="py-16 lg:py-20 relative border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -81,15 +81,12 @@ export default function Projects() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#3fb950] font-mono text-xs">$ ls -la ~/projects/</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#e6edf3] mb-3">Projects</h2>
-          <p className="text-[#8b949e] text-sm max-w-xl">
-            A selection of repositories — from data analysis to ML models and full-stack apps.
-          </p>
         </motion.div>
 
         {/* Filters */}
@@ -98,11 +95,10 @@ export default function Projects() {
             <button
               key={f}
               onClick={() => setActiveFilter(f)}
-              className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-150 border ${
-                activeFilter === f
-                  ? "bg-[#58a6ff]/15 text-[#58a6ff] border-[#58a6ff]/30"
-                  : "bg-transparent text-[#8b949e] border-white/10 hover:border-white/20 hover:text-[#e6edf3]"
-              }`}
+              className={`px-3 py-1.5 rounded-md text-xs font-mono transition-all duration-150 border ${activeFilter === f
+                ? "bg-[#58a6ff]/15 text-[#58a6ff] border-[#58a6ff]/30"
+                : "bg-transparent text-[#8b949e] border-white/10 hover:border-white/20 hover:text-[#e6edf3]"
+                }`}
             >
               {f}
               {f === "Featured" && (
@@ -207,9 +203,8 @@ export default function Projects() {
                       </a>
                     )}
                     <ChevronRight
-                      className={`w-3.5 h-3.5 ml-auto transition-all duration-200 ${
-                        hovered === project.id ? "text-[#58a6ff] translate-x-1" : "text-[#6e7681]"
-                      }`}
+                      className={`w-3.5 h-3.5 ml-auto transition-all duration-200 ${hovered === project.id ? "text-[#58a6ff] translate-x-1" : "text-[#6e7681]"
+                        }`}
                     />
                   </div>
                 </div>

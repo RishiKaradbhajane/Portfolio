@@ -21,7 +21,7 @@ const LinkedinIcon = (props: React.SVGProps<SVGSVGElement>) => (
 const TYPING_STRINGS = [
   "Data Engineer",
   "AI/ML Engineer",
-  "Big Data Engineer"
+  "Agentic AI Engineer"
 ];
 
 function TypingText() {
@@ -95,7 +95,7 @@ export default function HeroSection() {
     >
       {/* Grid background */}
       <div
-        className="absolute inset-0 opacity-[0.04]"
+        className="absolute inset-0 opacity-[0.04] pointer-events-none"
         style={{
           backgroundImage:
             "linear-gradient(rgba(88,166,255,0.6) 1px, transparent 1px), linear-gradient(90deg, rgba(88,166,255,0.6) 1px, transparent 1px)",
@@ -171,7 +171,11 @@ export default function HeroSection() {
               className="flex flex-wrap gap-3 mb-10"
             >
               <a
-                href="mailto:rushikeshrkaradbhajane@gmail.com"
+                href="#contact"
+                onClick={(e) => {
+                  e.preventDefault();
+                  document.getElementById("contact")?.scrollIntoView({ behavior: "smooth" });
+                }}
                 id="hero-contact-btn"
                 className="flex items-center gap-2 px-5 py-2.5 bg-[#58a6ff] hover:bg-[#79b8ff] text-[#0d1117] text-sm font-semibold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-[#58a6ff]/20"
               >

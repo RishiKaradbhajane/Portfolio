@@ -21,7 +21,7 @@ const CERTS = [
 
 export default function Certifications() {
   return (
-    <section id="certifications" className="py-20 lg:py-28 relative border-t border-white/5">
+    <section id="certifications" className="py-16 lg:py-20 relative border-t border-white/5">
       <div className="container mx-auto px-6 lg:px-12">
 
         {/* Header */}
@@ -30,15 +30,12 @@ export default function Certifications() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.5 }}
-          className="mb-10"
+          className="mb-8"
         >
           <div className="flex items-center gap-2 mb-3">
             <span className="text-[#3fb950] font-mono text-xs">$ ls certifications/</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold text-[#e6edf3] mb-3">Certifications &amp; Accreditations</h2>
-          <p className="text-[#8b949e] text-sm max-w-xl">
-            Official industry accreditation in Databricks and enterprise data platforms.
-          </p>
         </motion.div>
 
         {/* Certs grid */}
