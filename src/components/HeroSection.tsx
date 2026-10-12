@@ -193,7 +193,7 @@ export default function HeroSection() {
                 GitHub
               </a>
               <a
-                href="https://www.linkedin.com/in/rushikesh-karadbhjane/"
+                href="https://www.linkedin.com/in/rushikesh-karadbhajane/"
                 target="_blank"
                 rel="noopener noreferrer"
                 id="hero-linkedin-btn"
