@@ -258,15 +258,15 @@ export default function HeroSection() {
                 transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.2 }}
                 className="absolute -top-2 -left-2 bg-[#161b22]/90 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-[#58a6ff] shadow-lg"
               >
-                PySpark ⚡
+                Databricks 🧱
               </motion.div>
 
               <motion.div
                 animate={{ y: [0, 6, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                className="absolute top-1/4 -right-4 bg-[#161b22]/90 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-[#3fb950] shadow-lg"
+                className="absolute top-24 -right-8 sm:-right-10 bg-[#161b22]/90 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-[#3fb950] shadow-lg z-20 whitespace-nowrap"
               >
-                AI & ML 🤖
+                Agentic AI 🤖
               </motion.div>
 
               <motion.div
@@ -274,7 +274,7 @@ export default function HeroSection() {
                 transition={{ duration: 4.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                 className="absolute bottom-6 -left-4 bg-[#161b22]/90 backdrop-blur-md px-3 py-1 rounded-full border border-white/10 text-[11px] font-mono text-[#d2a8ff] shadow-lg"
               >
-                RAG 🧠
+                MLOps 🚀
               </motion.div>
             </div>
 

@@ -76,10 +76,21 @@ export default function ContactSection() {
     setErrorMsg("");
 
     try {
-      const res = await fetch("/api/contact", {
+      const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || "626471ea-940c-4339-a612-4e069fce7f11";
+      
+      // Web3Forms recommends direct client-side submission (avoiding server Cloudflare bot blocks)
+      const formData = new FormData();
+      formData.append("access_key", accessKey);
+      formData.append("name", formState.name);
+      formData.append("email", formState.email);
+      formData.append("subject", `[Portfolio] ${formState.subject}`);
+      formData.append("message", formState.message);
+      formData.append("from_name", formState.name);
+      formData.append("reply_to", formState.email);
+
+      const res = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formState),
+        body: formData,
       });
 
       const data = await res.json();
@@ -87,10 +98,24 @@ export default function ContactSection() {
       if (res.ok && data.success) {
         setStatus("sent");
         setFormState({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setStatus("idle"), 4000);
+        setTimeout(() => setStatus("idle"), 5000);
       } else {
-        setStatus("error");
-        setErrorMsg(data.error || "Failed to send message. Please try again.");
+        // Fallback to internal API route if direct fails
+        const fallbackRes = await fetch("/api/contact", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify(formState),
+        });
+        const fallbackData = await fallbackRes.json();
+        
+        if (fallbackRes.ok && fallbackData.success) {
+          setStatus("sent");
+          setFormState({ name: "", email: "", subject: "", message: "" });
+          setTimeout(() => setStatus("idle"), 5000);
+        } else {
+          setStatus("error");
+          setErrorMsg(data.message || fallbackData.error || "Failed to send message. Please try again.");
+        }
       }
     } catch {
       setStatus("error");
