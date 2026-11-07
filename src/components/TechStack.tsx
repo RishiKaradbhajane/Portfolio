@@ -12,6 +12,7 @@ const TECH_CATEGORIES = [
     skills: [
       { name: "PySpark", highlight: true },
       { name: "Apache Airflow", highlight: true },
+      { name: "AutoSys", highlight: true },
       { name: "Apache Kafka", highlight: true },
       { name: "Databricks", highlight: true },
       { name: "ETL / ELT Pipelines", highlight: true },
@@ -28,6 +29,7 @@ const TECH_CATEGORIES = [
       { name: "LLM & LangChain", highlight: true },
       { name: "Deep Learning", highlight: true },
       { name: "RAG Systems", highlight: true },
+      { name: "MCP", highlight: true },
       { name: "Data Science", highlight: true },
     ],
   },
